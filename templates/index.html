@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="{%static "css/bootstrap.min.css" %}" type ='text/css'/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Aral', sans-serif;
+            /* background: linear-gradient(45deg, #1a1a2e, #16213e); */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('{% static "images/home1.jpg" %}');
+            height: 500px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #61dafb;
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+            border: 2px solid #61dafb;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #61dafb;
+            color: #fff;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+        
+        <a href="/adminlogin/">Admin Login</a>
+        <a href="/userlogin/">User Login</a>
+        
+    
+</body>
+</html>

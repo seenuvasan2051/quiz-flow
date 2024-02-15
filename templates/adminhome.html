@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Quiz Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #f8f9fa;
+            }
+    
+            .container {
+                max-width: 600px;
+                margin-top: 50px;
+            }
+    
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+    
+            form {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            label {
+                font-weight: bold;
+            }
+    
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+    
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Admin Quiz Page</h1>
+            <form method="post" action="" id="quizForm">
+                {% csrf_token %}
+        
+                <!-- New Quiz Type Field -->
+                <div class="form-group">
+                    <label for="quiz_type">Quiz Type:</label>
+                    <select id="quiz_type" name="quiz_type" class="form-control">
+                        <option value="maths">Maths</option>
+                        <option value="english">English</option>
+                        <option value="gk">General Knowledge</option>
+                    </select>
+                </div>
+        
+                <!-- Existing Fields -->
+                <div class="form-group">
+                    <label for="question_text">Question Text:</label>
+                    <input type="text" id="question_text" name="question_text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="option1">Option 1:</label>
+                    <input type="text" id="option1" name="option1" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="option2">Option 2:</label>
+                    <input type="text" id="option2" name="option2" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="option3">Option 3:</label>
+                    <input type="text" id="option3" name="option3" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="option4">Option 4:</label>
+                    <input type="text" id="option4" name="option4" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="correct_option">Correct Option:</label>
+                    <input type="text" id="correct_option" name="correct_option" class="form-control">
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Add Question</button>
+            </form>
+        </div>
+        
+        <script src="{% static 'js/createQuiz.js' %}"></script>
+    </body>
+    
+</html>

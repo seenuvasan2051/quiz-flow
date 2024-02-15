@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Categories</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}" type ='text/css'/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #1a1a2e, #16213e); /* Light gray background */
+            color: #fff; /* Text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .quiz-links {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #fff; /* Link text color */
+            background-color: #3498db; /* Link background color */
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin: 15px 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-links">
+        <a href="/mathquiz/">Math Quiz</a>
+        <a href="/englishquiz/">English Quiz</a>
+        <a href="/gkquiz/">General Knowledge Quiz</a>
+    </div>
+    <div class="quiz-image">
+        <img src="{% static 'images/quizimage1.png' %}" alt="Quiz Image" hwidth="500" height="400">
+        
+    </div>
+</body>
+
+</html>

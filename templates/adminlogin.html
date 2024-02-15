@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type ="text/css"/>
+    <style>
+        body {
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            color: #495057; /* Text color */
+        }
+
+        .container {
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #007bff; /* Bootstrap primary color */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff; /* White background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        #idlogin {
+            background-color: #007bff; /* Bootstrap primary color for the button */
+            color: #fff; /* White text */
+        }
+
+        #idlogin:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1>Admin Login Page</h1>
+                <form method="post" action="/adminverification/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="contact" name="contact" placeholder="Contact NO" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" id="idlogin" class="btn btn-primary form-group" onclick="return adminValidation();">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

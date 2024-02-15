@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h1>Sign Up</h1>
+                <form method="post" action="/savenewuser/" class="col-12 col-md-6 offset-md-3">
+                    {% csrf_token %}
+                    <input type="text" id="name" name="name" placeholder="Name" class="form-control"><br>
+                    <input type="text" id="address" name="address" placeholder="Address" class="form-control"><br>
+                    <input type="email" id="email" name="email" placeholder="Email" class="form-control"><br>
+                    <input type="text" id="phoneNumber" name="phonenumber" placeholder="Contact NO" class="form-control"><br>
+                    <input type="password" id="password" name="password" placeholder="Password" class="form-control"><br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        background-image: linear-gradient(to top left, #1a1a2e, #16213e); /* Light gray background */
+        color: #fff; /* Text color */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        color: #3498db; /* Title color */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #353b48; /* Darker background color */
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin: 20px auto;
+    }
+
+    button:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
+</style>
